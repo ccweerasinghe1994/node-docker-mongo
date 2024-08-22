@@ -1,0 +1,14 @@
+services:
+  api:
+    container_name: api
+    build: .
+    restart: always
+    command: npm run start
+    develop:
+      watch:
+        - action: rebuild
+          path: .
+    ports:
+      - "3000:3000"
+    
+    
