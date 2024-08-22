@@ -1,0 +1,19 @@
+services:
+  api:
+    container_name: api
+    build: ./api
+    restart: always
+    command: npm run start
+    develop:
+      watch:
+        - action: sync
+          path: ./web
+          target: /src/web
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
+    ports:
+      - "3000:3000"
+    
+    
