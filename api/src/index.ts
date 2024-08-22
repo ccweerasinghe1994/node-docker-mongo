@@ -1,1 +1,3 @@
-console.log("Hello World! in node typescript");
+import { startServer } from "./lib/server.js";
+ 
+startServer(); 
