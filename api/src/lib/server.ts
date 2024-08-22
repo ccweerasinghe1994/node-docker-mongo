@@ -4,7 +4,14 @@ import { getConfig } from './config.js';
 
 export const startServer = ()=>{
     const httpServer = express();
+    
+    httpServer.get('/ping', (req, res) => {
+        console.log(`Ping Request ${req.url} ${Date.now()}`);
 
+        res.status(200).json({
+            message: 'Server is running'
+        });
+    });
 
     try {
         const PORT:number = +getConfig().PORT;
