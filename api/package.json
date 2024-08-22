@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "build:watch": "tsc -w",
-    "start": "node --env-file=.env.development --watch dist/index.js",
+    "dev:build": "tsc -w",
+    "dev:start": "node --env-file=.env.development --watch dist/index.js",
+    "start": "node --env-file=.env.development dist/index.js",
+    "dev":"run-p dev:*",
     "docker:run-dev": "docker compose up --watch",
     "docker:dev-stop": "docker compose down"
   },
